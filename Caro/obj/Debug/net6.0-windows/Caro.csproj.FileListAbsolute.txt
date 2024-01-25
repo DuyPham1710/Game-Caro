@@ -1,0 +1,17 @@
+D:\CODE\C#\Caro\Caro\bin\Debug\net6.0-windows\Caro.exe
+D:\CODE\C#\Caro\Caro\bin\Debug\net6.0-windows\Caro.deps.json
+D:\CODE\C#\Caro\Caro\bin\Debug\net6.0-windows\Caro.runtimeconfig.json
+D:\CODE\C#\Caro\Caro\bin\Debug\net6.0-windows\Caro.dll
+D:\CODE\C#\Caro\Caro\bin\Debug\net6.0-windows\Caro.pdb
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.Form1.resources
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.csproj.GenerateResource.cache
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.GeneratedMSBuildEditorConfig.editorconfig
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.AssemblyInfoInputs.cache
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.AssemblyInfo.cs
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.csproj.CoreCompileInputs.cache
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.dll
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\refint\Caro.dll
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.pdb
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.genruntimeconfig.cache
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\ref\Caro.dll
+D:\CODE\C#\Caro\Caro\obj\Debug\net6.0-windows\Caro.Properties.Resources.resources
