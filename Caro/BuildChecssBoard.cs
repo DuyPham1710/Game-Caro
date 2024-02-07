@@ -11,13 +11,15 @@ namespace Caro
         private Label lblX, lblO;
         private List<List<Button>> matrix;
         Stack<int>  listRowed, listColed;
-        private bool check_X = true, check_O = false;
-
+        public bool check_X = true, check_O = false;
+        private Panel panelChessBoard;
+       
         public BuildChecssBoard()  { }
-        public BuildChecssBoard(Label lblX, Label lblO) 
+        public BuildChecssBoard(Panel panel, Label lblX, Label lblO) 
         {
             LblX = lblX;
             LblO = lblO;
+            PanelChessBoard = panel;
         }
 
         public Label LblX { get => lblX; set => lblX = value; }
@@ -25,8 +27,9 @@ namespace Caro
         public List<List<Button>> Matrix { get => matrix; set => matrix = value; }
         public Stack<int> ListRowed { get => listRowed; set => listRowed = value; }
         public Stack<int> ListColed { get => listColed; set => listColed = value; }
+        public Panel PanelChessBoard { get => panelChessBoard; set => panelChessBoard = value; }
 
-        public void DrawChessboard(Panel PanelChessBoard)
+        public void DrawChessboard()
         {
             ListRowed = new Stack<int>();
             ListColed = new Stack<int>();
@@ -57,21 +60,29 @@ namespace Caro
         }
         private void btn_Click(object sender, EventArgs e)
         {
-          
             Button btn = sender as Button;
             if (check_X)
             {
                 if (btn.BackgroundImage == null)
                 {
                     btn.BackgroundImage = Image.FromFile("D:\\CODE\\C#\\Caro\\x.png");
+                    btn.BackgroundImageLayout = ImageLayout.Stretch;
                     btn.Text = ",";
                     check_X = false;
                     check_O = true;
                     isEndGame end = new isEndGame(Matrix);
                     if (end.check_win(btn))
                     {
-                        MessageBox.Show("X is winer");
-                        LblX.Text = (Int32.Parse(LblX.Text) + 1).ToString();
+                        DialogResult result = MessageBox.Show("X is winer", "Thông báo", MessageBoxButtons.OK);
+                        if (result == DialogResult.OK)
+                        { 
+                            LblX.Text = (Int32.Parse(LblX.Text) + 1).ToString();
+                            PanelChessBoard.Controls.Clear();
+                            DrawChessboard();
+                            check_X = true;
+                            check_O = false;
+                            return;
+                        }
                     }
                 }
             }
@@ -80,18 +91,26 @@ namespace Caro
                 if (btn.BackgroundImage == null)
                 {
                     btn.BackgroundImage = Image.FromFile("D:\\CODE\\C#\\Caro\\o.png");
+                    btn.BackgroundImageLayout = ImageLayout.Stretch;
                     btn.Text = ".";
                     check_X = true;
                     check_O = false;
                     isEndGame end = new isEndGame(Matrix);
                     if (end.check_win(btn))
                     {
-                        MessageBox.Show("O is winer");
-                        LblO.Text = (Int32.Parse(LblO.Text) + 1).ToString();
+                        DialogResult result = MessageBox.Show("O is winer", "Thông báo", MessageBoxButtons.OK);
+                        if (result == DialogResult.OK)
+                        {
+                            LblO.Text = (Int32.Parse(LblO.Text) + 1).ToString();
+                            PanelChessBoard.Controls.Clear();
+                            DrawChessboard();
+                            check_X = true;
+                            check_O = false;
+                            return;
+                        }   
                     }
                 }
             }
-            btn.BackgroundImageLayout = ImageLayout.Stretch;
             Index index = new Index(Matrix);
             Index idx = index.GetIndex(btn);
             ListRowed.Push(idx.X);
